@@ -1,0 +1,24 @@
+#
+# robots.txt for Imcat
+# Version 4.5.0
+#
+
+
+User-Agent: SomeSpider
+Disallow: /
+
+
+User-agent: *
+
+# Allow
+Allow: /views/base/assets/logo/
+Allow: /ximps/static/file
+
+# Disallow
+Disallow: /@read/
+Disallow: /imcat/
+Disallow: /root/
+Disallow: /views/
+Disallow: /ximps/
+Disallow: /xvars/
+
