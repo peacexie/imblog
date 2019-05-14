@@ -20,8 +20,10 @@
   - Improve account/password checking when instal or reset-password
   - 安装系统/重置密码时，改进账号密码的验证
 
-* Rar package is no longer updated / .rar文件: 
+* .rar package / .rar文件
   - <s>https://github.com/peacexie/imcat/blob/patches/projs/imblog-4.5.rar</s>
+  - .rar package is no longer updated
+  - .rar文件不再更新
 
 --- --- --- --- --- --- --- --- --- 
 

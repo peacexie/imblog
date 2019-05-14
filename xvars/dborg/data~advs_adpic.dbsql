@@ -6,6 +6,6 @@ INSERT INTO `{pre}advs_adpic{ext}` VALUES
 ('2015-9k-n9s1','1','apinn','2015-9d-d6u1','about','[图]61节日图片展','','','','1','888','','0','127.0.0.1','1442578834','peace','127.0.0.1','1442578834','peace'),
 ('2015-9k-ngs1','1','a2012','','','[首页]620x60：01','','{staticroot}/media/collect/y_bar1.jpg','','1','888','','0','127.0.0.1','1442579568','peace','127.0.0.1','1442579568','peace'),
 ('2015-9k-nha1','1','a2012','','','[首页]620x60：02','','{staticroot}/media/collect/fbot-e4.jpg','','1','888','','0','127.0.0.1','1442579657','peace','127.0.0.1','1442579657','peace'),
-('2015-9k-nj71','1','a2014','','','[首页]750x80：01','https://github.com/peacexie/imcat/projects/2','/peace/imcat/cat_ximps/static/media/collect/adv_850x080.jpg','','1','888','','19','127.0.0.1','1442579727','peace','127.0.0.1','1442579727','peace'),
+('2015-9k-nj71','1','a2014','','','[首页]750x80：01','http://imblog.txjia.com/home.php','{staticroot}/media/collect/adv_850x080.jpg','','1','888','','19','127.0.0.1','1442579727','peace','127.0.0.1','1442579727','peace'),
 ('2015-a3-mcz1','1','a2020','','','侧250x60(贴心口袋)','http://yscode.txjia.com/tools/screen.htm','{staticroot}/media/collect/adv_250x060b.jpg','','1','888','','8','127.0.0.1','1443871501','peace','127.0.0.1','1443871501','peace'),
 ('2015-a3-nd91','1','a2018','','','侧250x60(贴心代码)','http://txjia.com/tip/','{staticroot}/media/collect/adv_250x060a.jpg','','1','888','','22','127.0.0.1','1443875268','peace','127.0.0.1','1443875268','peace');
