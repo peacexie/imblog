@@ -1,0 +1,8 @@
+<?php
+return array (
+  'b1901.htm' => 'f9ff681a912084e5fd2083de3f66a8a6',
+  'home.php' => '095ef9fd86dd25446593f38dd7772109',
+  'imblog-READ.md' => '9531cbd5e28e5d650280ed5c0a13aeb3',
+  'index.php' => 'fc717327d113107846f441bd928f6c00',
+  'robots.txt' => 'bc80f0745d739ef26696efd321184294',
+); 

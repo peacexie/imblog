@@ -1,0 +1,4 @@
+
+-- active_admin@2019-03-16 16:15:35 -- 
+INSERT INTO `{pre}active_admin{ext}` VALUES 
+('74f2ef8b15b6730d7766a13b9efb45b6','adm_123','supper','1','0','0','1552723842','2019-33-8sps-cf5kgkgfu-933eed293','Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36');

@@ -1,0 +1,4 @@
+
+-- dext_news@2019-03-16 16:15:35 -- 
+INSERT INTO `{pre}dext_news{ext}` VALUES 
+('2013-45-6789','~','Peace','','测试','测试新闻','测试','');
