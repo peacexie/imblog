@@ -22,7 +22,7 @@ $_sy_pubcfg['parts'] =  array(
 
 //4. ids
 $_sy_pubcfg['ids'] =  array(
-    array('dtmp','/dset/_score.cfg.php',array('close_chn'=>'1')), //安装标记
+    array('dtmp','/dset/_score.cfg.php',array('close_comm'=>'1')), //安装标记
 );
 
 //5. cdemo
@@ -37,7 +37,7 @@ $_sy_pubcfg['cdemo'] =  array(
     'root/cfgs/excfg/ex_store.php' =>'',
     'root/cfgs/boot/_paths.php' => '',
     'root/cfgs/boot/cfg_adbug.php' => '',
-    'root/cfgs/boot/cfg_db.php' => '',  
+    'root/cfgs/boot/cfg_db.php' => '',
     'root/cfgs/boot/const.php' => array( 
         array("'".$_cbase['ck']['pre']."';", "'".$_cbase['sys']['sn']."';",),
         array("'v".devRun::rstVerfix()."_';", "'".comConvert::sysSn()."';",), 
@@ -66,7 +66,7 @@ $_sy_pubcfg['skip'] =  array(
     'main' => array(), // 'fitpl','yscode'
     'vendor' => array('aliOss'), // 'composer','Monolog','psrlog','silex',
     'dtmp' => array('@test','@udoc','debug','update','weixin','remote'),
-    'vendui' => array('artEditor','swplayer','photoSwipe','ftree'), //
+    'vendui' => array('artEditor','swplayer','photoSwipe','ftree','proxy'), //
 );
 //8. skip-files
 $_sy_pubcfg['skfiles'] =  array(
@@ -112,6 +112,7 @@ $_sy_pubcfg['skfiles'] =  array(
     'extMedoo.php',
     'Medoo.cls_php',
     'Pimple.cls_php',
+    'exvFtree.php',
 
     // mini-imps
     'supper_muma.imp_php',

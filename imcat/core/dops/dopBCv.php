@@ -130,24 +130,22 @@ class dopBCv{
     // 显示项-set_opts
     function set_opts($key){ 
         //set_new|新建\nset_doing|处理中\nset_paid|已付款\nset_send|已发货\nset_return|退货\n
-    
         //$val = $r[$key]; $vbak = $val; $vre = array();
         $fc = @$this->cfg['f'][$key];
         $ftype = @$fc['type']; $cfgs = @$fc['cfgs'];
         $extra = @$fc['fmextra']; $exstr = @$fc['fmexstr'];
-            if($extra=='winpop' && isset($_groups[$exstr])){ 
-                $arr = basElm::text2arr($exstr);
-            }elseif(in_array($ftype,array('select','cbox'))){
-                $arr = basElm::text2arr($cfgs);
-            }
-            //$va = explode(',',$val); 
-            $re = "";
-            foreach($arr as $k=>$v){
-                $re .= "\nset_$k|".basLang::show('core.bcv_set')."`$k`$v";
-            }
-
+        $arr = array();
+        if($extra=='winpop' && isset($_groups[$exstr])){ 
+            $arr = basElm::text2arr($exstr);
+        }elseif(in_array($ftype,array('select','cbox'))){
+            $arr = basElm::text2arr($cfgs);
+        }
+        //$va = explode(',',$val); 
+        $re = "";
+        foreach($arr as $k=>$v){
+            $re .= "\nset_$k|".basLang::show('core.bcv_set')."`$k`$v";
+        }
         return $re; 
-    
     }
 
 }

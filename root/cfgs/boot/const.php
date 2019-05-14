@@ -3,7 +3,7 @@
 /// 参数配置-根据需要配置 -----------------------------------------------
 
 // 系统参数
-$_cbase['sys']['sn']      = '2e8fae11-5b67-czyx-xmao-2019-5b9rr7'; // 序列号
+$_cbase['sys']['sn']      = '0BAB703D-127A-B479-1979-2010-0424X888'; // 序列号
 $_cbase['sys']['ver']     = '4.8'; // 版本号
 $_cbase['sys']['cset']    = 'utf-8';// 系统编码
 $_cbase['sys']['tmzone']  = '8'; //
@@ -36,7 +36,7 @@ $_cbase['debug']['db_time'] = '100'; //0,10,100
 $_cbase['tpl']['tpc_on']  = 0; //是否开启模板缓存，true开启,false不开启 
 $_cbase['tpl']['tpc_ext'] = '.cac_php'; //模板缓存后缀,一般不需要修改 
 $_cbase['tpl']['no_static'] = '(adm)'; //,umc
-$_cbase['tpl']['def_static'] = 'chn';
+$_cbase['tpl']['def_static'] = 'comm';
 $_cbase['tpl']['mob_tpls'] = '(mob)'; //,app
 
 // server
