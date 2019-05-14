@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+{php $this->pmeta('首页 - '.$_cbase['sys_name'].' v'.$_cbase['sys']['ver']); }
+<meta name='keywords' content='贴心,博客,Imblog,便笺墙,心情墙,许愿墙,和平鸽小语'>
+<meta name='description' content='贴心博客(Imblog)基于`jquery2+bootstrap4+贴心猫`开发,包含博客,便笺墙,关于我们三个常用模块'>
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<?php
+$adbar = "<div class='pb-3'><span id='jsid_advs_adpic_boxpic'><!--adpic:a2014--></span></div>";
+?>
+
+<div class="row">
+
+  <div class="col-lg-9 hleft">
+
+    {tag:tp=[Type,u][modid,info][idfix,top]} 
+        <?php if($i_u%2==0){ echo "<div class='row'>\n"; } ?>
+        <div class="card col-sm ml-3 mb-3">
+            <ul class="card-body">
+              <a class="float-right" href='{surl("info-$t_kid")}'>More</a>
+              <h5 class="card-title">
+                {=$t_title}
+              </h5>
+              {tag:blogn=[List][modid,info][stype,$t_kid][limit,5]}
+              <p class="home-cline">
+                <span class="float-right small pl-1">{stime($t_atime)}</span>
+                <a href='{surl("info.$t_did")}'>{title($t_title,120,$v)}</a>
+              </p>
+              {/tag:blogn}
+            </ul>
+        </div>
+        <?php if($i_u%2==1){ echo "</div>\n"; if($i_u==1){ echo "\n$adbar\n"; } } ?>
+    {/tag:tp}
+    <?php if($i_u%2!=1){ echo "</div>"; } ?>
+
+  </div>
+
+  <?php $haslinks=1; ?>
+  {inc:"home/_side"}
+
+</div>
+
+{inc:"home/_foot"}
+<script>digg()</script>
+<script src="{=PATH_VIEWS}/comm/home/chain.js"></script>
+</body></html>
+

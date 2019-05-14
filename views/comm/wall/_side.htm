@@ -1,0 +1,26 @@
+
+  <div class="col-lg-3">
+
+      <div class="sidetop"></div>
+
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary text-light">{=$_cbase['part']['name']}</li>
+        {loop $_cbase['part']['tab'] $ko $vo}
+        <a class="list-group-item {if $ko==$this->key}active{/if}" 
+          href='{surl("wall-$ko")}'>{=$vo}</a>
+        {/loop}
+      </ul>
+
+      <div class="pt-3 pb-3"><span id='jsid_advs_adpic_250x60b'><!--adpic:a2020--></span></div>
+
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary text-light">{lang(blog.e_newba)}</li>
+        {tag:blogn=[List][modid,info][limit,10]}
+        <p class="list-group-item">
+          <span class="float-right small pl-1">{stime($t_atime)}</span>
+          <a href='{surl("info.$t_did")}'>{title($t_title,120,$v)}</a>
+        </p>
+        {/tag:blogn}
+      </ul>
+
+  </div>

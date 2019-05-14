@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head>
+{php $this->pmeta(lang('blog.c_pub')." - $title"); }
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<div class="row">
+  <div class="col-lg-9">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb ileft">
+          <li class="breadcrumb-item"><a href="{surl(0)}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{surl(info)}">{lang(blog.a_blog)}</a></li>
+          <li class="breadcrumb-item active">
+            {lang(blog.c_pub)}
+          </li>
+        </ol>
+      </nav>
+
+      <!--cont-start-->
+      <h1 class="news_title">
+          <a href='{surl("info.$this->key")}'>{=$title}</a>
+      </h1>
+      <div class="news_rem">
+        <div class="rembar"> 
+        <span class="remadd"><a href='{surl("info.$did.rem")}'>{lang(blog.c_back)}</a></span> 
+        <span class="remtitle">{lang(blog.c_pub)}</span> 
+        </div><!--[cache,60]-->
+
+        <form action="?" method="post" id='fmpub' usercheck='ucheck' >
+            <input name='fm[pid]' type='hidden' value='{=$this->key}' />
+            <div class="form-group">
+              <label>{lang(blog.c_detail)}</label>
+              <textarea class="form-control" name="fm[detail]" reg="str:10-240" tip="{lang(blog.c_detail)}`10-240`{lang(blog.e_chars)}" rows="3" placeholder="{lang(blog.c_info1)}"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>{lang(blog.c_nick)}</label>
+                <input type="text" class="form-control" name="fm[mname]" reg="str:2-18" tip="{lang(blog.c_nick)}`2-18`{lang(blog.e_chars)}" placeholder="{lang(blog.c_nick)}" maxlength="15">
+              </div>
+              <div class="form-group col-md-6"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>{lang(vcode)}</label>
+                <script>fsInit('rempub');</script>
+              </div>
+              <div class="form-group col-md-6">
+                <label>{lang(blog.c_confirm)}</label>
+                <button type="submit" id='submit' class="form-control btn btn-primary mb-2">{lang(blog.c_confirm)}</button>
+              </div>
+            </div>
+
+            <div class="form-row bg-warning">
+              <div class="px-2 py-1">{lang(blog.c_info1)} {lang(blog.c_info2)}</div>
+            </div>
+
+        </form>
+
+      </div>
+      <div class="clear"></div>
+      <!--cont-end-->
+
+  </div>
+  <div class="col-lg-3">
+    {inc:"info/_side"}
+  </div>
+</div>
+
+{inc:"home/_foot"}
+<script src='/peace/imcat/imblog/views/base/assets/jslib/jq_base.js?_r=4.5.0'></script>
+<script>
+function evf_ucheck(msgarr,isSubmit){
+    if(!isSubmit){
+        //jsLog(msgarr);
+        alert(msgarr[0]);
+    }else{
+        $.ajax({ // dataType: dataType
+            url: _cbase.run.roots + '/plus/coms/irem.php?lang='+_cbase.sys.lang,
+            data: $('#fmpub').serialize(), 
+            success: function(data,status){
+                $('#fmpub')[0].reset();
+                alert(data);
+                window.location.href = '{surl("info.$did.rem")}';
+            }, // "Data: " + data + "nStatus: " + status
+            type: 'POST'
+        });
+    }
+    return false;
+}
+</script>
+</body></html>
+

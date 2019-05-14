@@ -1,0 +1,47 @@
+{imp:"home/layout"}
+
+{block:head}
+{php} $resume = '通用PHP建站系统'; {/php}
+<title>贴心猫(imcat) - {=$resume}</title>
+<meta name='keywords' content='贴心猫(imcat):贴心猫,轻量免费,开源共享,PHP CMS,微信接口,Imcat,imcat'>
+<meta name='description' content='贴心猫(imcat)一款轻量、免费、共享的通用PHP网站应用系统；App服务端-PC版-手机版-微信接口一站搞定！'>
+{/block:head}
+
+{block:inner}
+
+    <div class="block"><div class="in">
+        <h2>
+            <i class="r"><a href='{surl(comm:wall)}'>More</a></i>
+            {=$_cbase['part']['name']}
+        </h2>
+        <div>
+            {loop $_cbase['part']['tab'] $wk $wv} <?php $top=$wk=='mood'?2:1;?>
+            {tag:blogn=[List][modid,wall][part,$wk][limit,$top]}
+            <p title="{=$_cbase['part']['tab'][$t_part]}">
+                <i class="r">{stime($t_atime)}</i>
+                <a href='{surl("comm:wall-$wk")}'>{title($t_title,120,$v)}</a>
+            </p>
+            {/tag:blogn}
+            {/loop}
+        </div>
+    </div></div>
+
+    {tag:tp=[Type,u][modid,info][idfix,top]} 
+    <div class="block"><div class="in">
+        <h2>
+            <i class="r"><a href='{surl("comm:info-$t_kid")}'>More</a></i>
+            {=$t_title}
+        </h2>
+        <div>
+            {tag:blogn=[List][modid,info][stype,$t_kid][limit,5]}
+            <p>
+                <i class="r">{stime($t_atime)}</i>
+                <a href='{surl("comm:info.$t_did")}'>{title($t_title,120,$v)}</a>
+            </p>
+            {/tag:blogn}
+        </div>
+    </div></div>
+    <?php if($i_u%2==0){ echo "<div class='clear'></div>\n"; } ?>
+    {/tag:tp}
+
+{/block:inner}

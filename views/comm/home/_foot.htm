@@ -1,0 +1,50 @@
+
+<?php if(!basEnv::isMobile()){ /**/ ?>
+<div class="row">
+
+    <?=tagCache::showAdv('adtext:a2020',1,'-');?>
+
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/peace/txbox.htm" target="_blank">贴心Java盒子</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://www.elifebike.com" target="_blank">Elifebike</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/kgfood/" target="_blank">科冠食品</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://down.admin5.com/php/130751.html" target="_blank">贴心猫-A5源码</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://www.pswpower.com" target="_blank">pswpower</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/peace/txasp.htm" target="_blank">贴心Asp系统</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/peace/wenode.htm" target="_blank">Node.js微框架</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://yscode.txjia.com/tools/screen.htm">贴心口袋</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="https://txjia2.taobao.com/" target="_blank">越乐家装(淘宝)</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/tip/" target="_blank">贴心代码</a></div>
+
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-ipaddr">IP转地址类</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-cnconv">简繁/拼音转化</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-seal">PHP印章制作</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-qrcode">二维码生成器</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-vimg">电话图片显示</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-shapan">地图中的沙盘</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-spword">中文分词</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/dev.php?tools-wmark">水印描边</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://txjia.com/peace/wenode.htm" target="_blank">Node.js微框架</a></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6"><a href="http://imcat.txjia.com/root/plus/yscode/dizhen.php" target="_blank">近7天地震</a></div>
+
+</div>
+<?php } ?>
+
+<div class="foot">
+  <p class="fnav">
+    {tag:tp=[Type,u][modid,about][idfix,top]}
+    <a class="list-group-item" href='{surl("about-$t_kid")}'>{=$t_title}</a>
+    {/tag:tp}
+  </p>
+  <p class="copy">
+    <a href="http://imcat.txjia.com/" title="贴心博客(Imblog)" target="_blank">贴心博客(Imblog)</a>{lang(blog.a_bdev)};
+    <a href="https://jq.qq.com/?_wv=1027&k=43NUHsK" title="贴心猫(imcat)技术交流" target="_blank">QQ群:607070548</a>; 
+    <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备07020797号</a> 
+  </p>
+  <p class="info"><?=basDebug::runInfo()?></p>
+</div>
+
+</div>
+
+<?php
+eimp('/bootstrap/js/bs4.min.js','vendui');
+?>

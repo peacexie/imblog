@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html><html><head>
+{php $this->pmeta('Themes|主题 & Lang|语言 - DIY'); }
+{php}
+$skin = comCookie::oget('skin'); $skin || $skin = 'bs4.min';
+$lang = comCookie::oget('lang'); $lang || $lang = $_cbase['sys']['lang'];
+$_cbase['sys']['lang'] = $lang; //echo "$skin-$lang";
+eimp('initJs','jquery;comm;comm(-lang)');
+eimp("/bootstrap/css/$skin.css",'vendui'); 
+eimp('/~tpl/comm.css');
+{/php}
+</head><body>
+
+<div class="container pt-3">
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{surl(0)}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{lang(blog.r_thla)}</li>
+  </ol>
+</nav>
+
+<div class="row mt-3 mb-5">
+    <div class="col">
+<p class="p-2 mb-1 border-bottom border-secondary text-dark" style="background:#EEE;">
+{lang(blog.r_ctext)}
+</p>
+<p class="p-2 mb-1 text-primary">.text-primary</p>
+<p class="p-2 mb-1 text-secondary">.text-secondary</p>
+<p class="p-2 mb-1 text-success">.text-success</p>
+<p class="p-2 mb-1 text-danger">.text-danger</p>
+<p class="p-2 mb-1 text-warning">.text-warning</p>
+<p class="p-2 mb-1 text-info">.text-info</p>
+<p class="p-2 mb-1 text-light bg-dark">.text-light</p>
+<p class="p-2 mb-1 text-dark">.text-dark</p>
+<p class="p-2 mb-1 text-muted">.text-muted</p>
+<p class="p-2 mb-1 text-white bg-dark">.text-white</p>
+    </div>
+    <div class="col">
+<p class="p-2 mb-2 border-bottom border-secondary text-dark" style="background:#EEE;">
+{lang(blog.r_cbg)}
+</p>
+<p class="p-2 mb-2 bg-primary text-white">.bg-primary</p>
+<p class="p-2 mb-2 bg-secondary text-white">.bg-secondary</p>
+<p class="p-2 mb-2 bg-success text-white">.bg-success</p>
+<p class="p-2 mb-2 bg-danger text-white">.bg-danger</p>
+<p class="p-2 mb-2 bg-warning text-dark">.bg-warning</p>
+<p class="p-2 mb-2 bg-info text-white">.bg-info</p>
+<p class="p-2 mb-2 bg-light text-dark">.bg-light</p>
+<p class="p-2 mb-2 bg-dark text-white">.bg-dark</p>
+<p class="p-2 mb-2 bg-white text-dark">.bg-white</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+
+        <p class="p-2 mb-1 border-bottom border-secondary text-dark" style="background:#EEE;">
+            {lang(blog.r_xtheme)} - {=$skin}
+        </p>
+        <p class="p-2">
+            - {lang(blog.r_lnks)}: 
+        </p>
+        <p class="p-1 mb-3 text-right">
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?skin:bs4.min" target='_self'>min</a> # 
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?skin:bs4.cerulean" target='_self'>cerulean</a> # 
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?skin:bs4.flatly" target='_self'>flatly</a> # 
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?skin:bs4.superhero" target='_self'>superhero</a>
+        </p>
+
+        <p class="p-2 mb-1 border-bottom border-secondary text-dark" style="background:#EEE;">
+            {lang(blog.r_gettheme)}
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rt_downs)}: <br>
+            - {lang(blog.rt_durl)}: https://bootswatch.com/ <br>
+            - {lang(blog.rt_path)}: /ximps/vendui/bootstrap/css/ <br>
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rt_file)}: <br>
+            - {lang(blog.rt_dfile)}: bs4.min.css<br>
+            - {lang(blog.rt_user)}: bs4.cerulean.css<br>
+            - {lang(blog.rt_user)}: bs4.flatly.css<br>
+            - {lang(blog.rt_user)}: bs4.superhero.css<br>
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rt_code)}: `$skin.css`<br>
+            * {lang(blog.rt_ucss)}: “comm.css”
+        </p>
+
+    </div>
+    <div class="col">
+
+        <p class="p-2 mb-1 border-bottom border-secondary text-dark" style="background:#EEE;">
+            {lang(blog.r_xlang)} - {=$lang}
+        </p>
+        <p class="p-2">
+            - {lang(blog.r_lnks)}: 
+        </p>
+        <p class="p-1 mb-3 text-right">
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?lang:en" target='_self'>lang:en</a> # 
+            <a href="{=PATH_PROJ}/root/plus/api/redir.php?lang:cn" target='_self'>lang:cn</a>
+        </p>
+        
+        <p class="p-2 mb-1 border-bottom border-secondary text-dark" style="background:#EEE;">
+            {lang(blog.r_addlang)}
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rl_read)}: <br>
+            - http://imcat.txjia.com/dev.php?info-help#s_lang<br>
+            - http://imcat.txjia.com/doc.php?info-help#s_lang<br>
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rl_file)}: <br>
+            - `$_cbase['sys']['lang'] = 'flatly';` // {lang(blog.rl_setlang)}<br>
+            - `$_cbase['ucfg']['lang'] = '(auto)';` // {lang(blog.rl_autlang)}<br>
+        </p>
+        <p class="p-2 mb-1">
+            * {lang(blog.rl_code)}: <br>
+            `$_cbase['sys']['lang'] = $lang;`
+        </p>
+
+    </div>
+</div>
+
+<div class="foot">
+  <p class="info"><?=basDebug::runInfo()?></p>
+</div>
+
+</div>
+
+</body></html>
+

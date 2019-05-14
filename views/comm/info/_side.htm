@@ -1,0 +1,28 @@
+
+<div class="sidetop"></div>
+
+<form method="get" action="{surl(0)}">
+    <input name="mkv" type="hidden" value="{=$this->mod}--list">
+    <select name="stype" class="form-control">{= basElm::setOption($this->mod,$this->key); }</select>
+    <div class="row d-flex">
+      <div class="col-8">
+        <div style="margin-right:-2rem">
+          <input name="keywd" type="text" id="keywd" class="form-control inblock" />
+        </div>
+      </div>
+      <div class="col-4">
+        <input type="submit" id="sobtn" value="{lang(blog.b_search)}" class="form-control inblock" />
+      </div>
+    </div>
+</form>
+
+<div class="mt-3 mb-3"><span id='jsid_advs_adpic_250x60b'><!--adpic:a2020--></span></div>
+
+<ul class="list-group">
+  <li class="list-group-item bg-secondary text-light ">{lang(blog.b_catalog)}</li>
+  {tag:tp=[Type,u][modid,$this->mod][idfix,top]}
+  <a class="list-group-item {if $t_kid==$this->key}active{/if}" 
+    href='{surl($this->mod."-$t_kid")}'>{=$t_title}</a>
+  {/tag:tp}
+</ul>
+

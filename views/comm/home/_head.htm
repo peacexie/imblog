@@ -1,0 +1,80 @@
+
+<div class="container">
+
+  <div class="float-right d-none d-md-block">
+    <b class="border rounded p-1 qrcode_tip hid480" onMouseOver="qrurl_act(1,1,1)" onMouseOut="qrurl_act(1,0)">
+      {lang(blog.a_scanbtn)}
+      <span class="fa fa-qrcode"></span>
+      <i class="qrcode_pic" id="qrcode_pic1" style="display:none;"></i>
+    </b>
+  </div>
+
+  <div class="d-flex flex-row mt-3 head">
+    <div><a href="{=PATH_PROJ}/" style="">
+    <img src="{=PATH_VIEWS}/base/assets/logo/logo120x60.jpg" height="54" alt="{=$_cbase[sys_name]}(LOGO)" class="ph10" />
+    </a></div>
+    <h1 class="pt-3 pl-2">{=$_cbase['sys_name']}</h1>
+    <h3>v{=$_cbase['sys']['ver']}</h3>
+    <p class="pt-3 pl-5 d-none d-lg-block">{lang(blog.a_bdev)}</p>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3 mb-3">
+
+    <a class="navbar-brand" href="{surl(0)}">{lang(blog.a_brand)}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {if $this->mod=='info'}active{/if}" href="#" id="navMemos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {lang(blog.a_blog)}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navMemos">
+            {tag:tp=[Type,u][modid,info][idfix,top]}
+              <a class="dropdown-item{if $t_kid==$this->key} active{/if}" href='{surl("info-$t_kid")}'>{=$t_title}</a>
+            {/tag:tp}
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {if $this->mod=='wall'}active{/if}" href="#" id="navMemos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {=$_cbase['part']['name']}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navMemos">
+            {loop $_cbase['part']['tab'] $ko $vo}
+            <a class="dropdown-item{if $ko==$this->key} active{/if}" href='{surl("wall-$ko")}'>{=$vo}</a>
+            {/loop}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item{if $this->mod=='wall' && !$this->key} active{/if}" href='{surl(wall)}'>({lang(blog.b_taball)}){=$_cbase['part']['name']}</a>
+          </div>
+        </li>
+
+        <li class="nav-item {if $this->mod=='about'}active{/if}">
+          <a class="nav-link" href='{surl(about)}'>{lang(blog.a_about)}</a>
+        </li>
+        
+      </ul>
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navElse" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {lang(blog.e_nvext)}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navElse">
+          <a class="dropdown-item" href="{=PATH_PROJ}/root/plus/api/redir.php?lang:cn&recbk={surl(home-tips)}" >主题 & 语言包</a>
+          <a class="dropdown-item" href="{=PATH_PROJ}/root/plus/api/redir.php?lang:en&recbk={surl(home-tips)}">Themes & Language</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://github.com/peacexie/imcat/blob/patches/projs/imblog-READ.md" target="_blank">About:贴心博客(Imblog)</a>
+          <a class="dropdown-item" href="https://github.com/peacexie/imcat/blob/patches/projs/imblog-4.5.rar" target="_blank">Down:贴心博客(Imblog)</a>
+          <a class="dropdown-item" href="http://imcat.txjia.com" target="_blank">Go:贴心猫(imcat)</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="http://imblog.txjia.com/home.php?ftree" target="_blank">广告:家族亲友树</a>
+        </div>
+
+      </li>
+
+    </div>
+  </nav>

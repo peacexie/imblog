@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html><html><head>
+{php $this->pmeta('Pick Colors'); }
+{inc:"home/_imps"}
+<style type="text/css">
+label { margin-bottom:0rem; }
+</style>
+</head><body>
+
+<div class="container pt-3">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">选择颜色</li>
+  </ol>
+</nav>
+
+<div class="row mt-3 mb-5 ml-lg-5 mr-lg-5 ml-xl-5 mr-xl-5">
+    <div class="col">
+<p class="p-2 mb-1 bg-light text-primary">
+    <label>
+    <input type="radio" name="exampleRadios" id="r1" value="option1">
+    text-primary + bg-light
+    </label>
+</p>
+<p class="p-2 mb-1 bg-light text-secondary">text-secondary + bg-light</p>
+<p class="p-2 mb-1 bg-light text-success">text-success + bg-light</p>
+<p class="p-2 mb-1 bg-light text-danger">text-danger + bg-light</p>
+<p class="p-2 mb-1 bg-light text-warning">text-warning + bg-light</p>
+<p class="p-2 mb-1 bg-light text-info">text-info + bg-light</p>
+<p class="p-2 mb-1 bg-light text-muted">text-muted + bg-light</p>
+
+    </div>
+    <div class="col">
+<p class="p-2 mb-2 bg-primary text-white">bg-primary + text-white</p>
+<p class="p-2 mb-2 bg-secondary text-white">bg-secondary + text-white</p>
+<p class="p-2 mb-2 bg-success text-white">bg-success + text-white</p>
+<p class="p-2 mb-2 bg-danger text-white">bg-danger + text-white</p>
+<p class="p-2 mb-2 bg-warning text-white">bg-warning + text-white</p>
+<p class="p-2 mb-2 bg-info text-white">bg-info + text-white</p>
+
+    </div>
+</div>
+
+</body></html>
+
+<?php $_cbase['tpl']['tplpend']='~';?>

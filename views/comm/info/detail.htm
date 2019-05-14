@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head>
+{php $this->pmeta(); }
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<div class="row">
+  <div class="col-lg-9">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb ileft">
+          <li class="breadcrumb-item"><a href="{surl(0)}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{surl(info)}">{lang(blog.a_blog)}</a></li>
+          <li class="breadcrumb-item active">
+            {if $this->type=='detail'}
+              {lang(blog.b_detail)}
+            {else}
+              {sopt($this->key,$this->mod,0,$null)}
+            {/if}
+          </li>
+        </ol>
+      </nav>
+
+      <h1 class="news_title">{title($title,96,$this->vars)}</h1>
+
+      <div class="news_bar"> 
+        {lang(blog.b_pub)}:<i class="atime">{stime($atime,min)}</i> &nbsp; 
+        {lang(blog.b_click)}:<i id="jsid_field_{=$this->mod}:{=$did}:click">{=$click}<!--,add1--></i>{lang(blog.b_cu)} &nbsp; 
+        {lang(blog.b_rem)}:<i id="cnt_brem">0</i>{lang(blog.b_iu)} 
+      </div>
+      <div class="news_text"> {html($detail)} </div>
+      <div class="news_rem">
+
+        <div class="rembar"> 
+        <span class="remadd"><a href='{surl("info.$did.rem")}'>{lang(blog.b_rem)}(<i id="jsid_count_irem:{=$did}">0<!--`{=$this->mod},cnt_{=brem}`--></i>{lang(blog.b_iu)})</a> </span> 
+        <span class="remtitle">{lang(blog.b_rems)}</span> 
+        </div><!--[cache,60]--> 
+        {tag:dlist=[jsList][modid,irem][pid,$did][limit,20]}
+        {:row}
+        <dl>
+          <dt>
+            <i class="float-right">{stime($t_atime,min)} </i>
+            {=$t_mname}
+          </dt>
+          <dd>
+          {text($t_detail,2400)}
+          </dd>
+        </dl>
+        {/row}
+        {/tag:dlist}
+      </div>
+
+      <div class="clearfix">&nbsp;</div>
+
+  </div>
+  <div class="col-lg-3">
+    {inc:"info/_side"}
+  </div>
+</div>
+
+{inc:"home/_foot"} 
+</body></html>

@@ -1,0 +1,66 @@
+
+  <div class="col-lg-3">
+
+      <ul class="list-group pb-3">
+        <li class="list-group-item bg-secondary text-light">
+          <b>{=$_cbase['part']['tab']['mood']}</b>
+          <a class="badge badge-light"><a class="float-right text-light" href='{surl(wall-mood)}'>More</a></a>
+        </li>
+        {tag:moodn=[List][modid,wall][part,mood][limit,4]}
+        <?php $vbg=empty($t_vbg)?'bg-light':$t_vbg; $vtxt=empty($t_vtxt)?'text-secondary':$t_vtxt;?>
+        <li class="list-group-item {=$vtxt} {=$vbg}" id='{=$t_cid}'>
+            <i class="add1" msg="+1/Error!" style="display:none;"></i>
+            <span class="float-right badge badge-light fa fa-thumbs-o-up"> {=$t_diggtop}</span>
+            {=$t_title}
+        </li>
+        {/tag:moodn}
+      </ul>
+
+      <div class="pb-3"><span id='jsid_advs_adpic_250x60a'><!--adpic:a2018--></span></div>
+
+      <div id="Carousel1" class="carousel slide pb-3" data-ride="carousel">
+        <div class="carousel-inner">
+
+            {tag:wishn=[List][modid,wall][part,wish][limit,3]}
+            <?php $vbg=empty($t_vbg)?'bg-light':$t_vbg; $vtxt=empty($t_vtxt)?'text-secondary':$t_vtxt;?>
+            <div class="carousel-item card {if $i_v==0}active{/if}">
+                <ul class="card-body {=$vtxt} {=$vbg}" style="min-height:150px;">
+                    <p class="card-text">{=$t_title}</p>
+                    <p class="card-text pr-3" id='{=$t_cid}'>
+                      <i class="add1" msg="+1/Error!" style="display:none;"></i>
+                      <span class="float-right badge badge-light fa fa-thumbs-o-up"> {=$t_diggtop}</span>
+                      <small class="pl-3">
+                        {stime($t_atime)}
+                    </small></p>
+                </ul>
+            </div>
+            {/tag:wishn}
+        </div>
+        <a class="carousel-control-prev" href="#Carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#Carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="pb-3"><span id='jsid_advs_adpic_250x60b'><!--adpic:a2020--></span></div>
+
+      <ul class="list-group pb-3">
+        <li class="list-group-item bg-secondary text-light">
+          <b>{=$_cbase['part']['tab']['word']}</b>
+          <a class="badge badge-light"><a class="float-right text-light" href='{surl(wall-word)}'>More</a></a>
+        </li>
+        {tag:wordn=[List][modid,wall][part,word][limit,3]}
+        <?php $vbg=empty($t_vbg)?'bg-light':$t_vbg; $vtxt=empty($t_vtxt)?'text-secondary':$t_vtxt;?>
+        <li class="list-group-item {=$vtxt} {=$vbg}" id='{=$t_cid}'>
+            <i class="add1" msg="+1/Error!" style="display:none;"></i>
+            <span class="float-right badge badge-light fa fa-thumbs-o-up"> {=$t_diggtop}</span>
+            {=$t_title}
+        </li>
+        {/tag:wordn}
+      </ul>
+
+  </div>

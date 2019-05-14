@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+{php} 
+  $this->pmeta(); $_all=lang('blog.b_taball'); $_so=lang('blog.b_search');
+  $_kw=req('keywd'); $null = empty($_kw)?"<span class='cCCC'>($_all)</span>":"($_so:`$_kw`)"; 
+{/php}
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<div class="row">
+  <div class="col-lg-9">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb ileft">
+          <li class="breadcrumb-item"><a href="{surl(0)}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{surl(info)}">{lang(blog.a_blog)}</a></li>
+          <li class="breadcrumb-item active">{sopt($this->key,$this->mod,0,$null)}</li>
+        </ol>
+      </nav>
+ 
+      {tag:dlist=[Page][modid,$this->mod][stype][hinfo][keywd][limit,20]}
+      <dl class="news-list"> 
+      {:row}
+      <dt>
+      <a href="{surl($this->mod.".$t_did")}">{title($t_title,60,$v)}</a>
+      {if !empty($t_hinfo)}<b class="uimark-star-icon1a">&nbsp;</b>{/if}
+      </dt>
+      <dd><i class="atype">{sopt($t_catid,$this->mod,0,$null)}</i><i class="click">{=$t_click}次</i><i class="atime">{stime($t_atime,min)}</i></dd>
+      {/row}
+      </dl>
+      <div class="clearfix"></div>
+      {php echo $_cbase['page']['bar']; }
+      {/tag:dlist}
+      <script>bs4pager();</script>
+      <div class="clearfix">&nbsp;</div>
+
+  </div>
+  <div class="col-lg-3">
+    {inc:"info/_side"}
+  </div>
+</div>
+
+{inc:"home/_foot"} 
+</body></html>

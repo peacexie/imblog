@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+{php $this->pmeta(lang('blog.b_rems')." - $title"); }
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<div class="row">
+  <div class="col-lg-9">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb ileft">
+          <li class="breadcrumb-item"><a href="{surl(0)}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{surl(info)}">{lang(blog.a_blog)}</a></li>
+          <li class="breadcrumb-item active">
+            {lang(blog.b_rems)}
+          </li>
+        </ol>
+      </nav>
+
+      <!--cont-start-->
+      <h1 class="news_title">
+          <a href='{surl("info.$this->key")}'>{=$title}</a>
+      </h1>
+      <div class="news_rem">
+        <div class="rembar"> 
+        <span class="remadd"><a href='{surl("info.$did.pub")}'>{lang(blog.b_pub)}</a></span> 
+        <span class="remtitle">{lang(blog.b_rems)}</span> 
+        </div><!--[cache,60]-->
+        {tag:nrlist=[Page][modid,irem][pid,$this->key][keywd,0,title+detail][limit,50]}
+        {:row}
+        <dl>
+            <dt>
+              <i class="float-right">{stime($t_atime,min)} </i>
+              {=$t_mname}
+            </dt>
+            <dd>
+            {text($t_detail,2400)}
+            </dd>
+        </dl>
+        {/row}
+        <div class="clear"></div>
+
+        {php echo $_cbase['page']['bar']; }
+        <script>bs4pager();</script>
+        <div class="clearfix"></div>
+
+        {/tag:nrlist}
+      </div>
+      <div class="clear"></div>
+      <!--cont-end-->
+
+  </div>
+  <div class="col-lg-3">
+    {inc:"info/_side"}
+  </div>
+</div>
+
+{inc:"home/_foot"} 
+</body></html>
+

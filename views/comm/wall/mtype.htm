@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head>
+{php $this->pmeta($this->key?$_cbase['part']['tab'][$this->key]:''); }
+{inc:"home/_imps"}
+</head><body>
+{inc:"home/_head"}
+
+<?php
+$adbar = "<div class='pb-3'><span id='jsid_advs_adpic_boxpic'><!--adpic:a2014--></span></div>";
+$pkey = empty($this->key) ? '(all)' : $this->key;
+?>
+
+<div class="row">
+
+  <div class="col-lg-9">
+
+    <?php $i=0; ?>
+    {tag:wlists=[Page,u][modid,wall][part,$pkey][limit,10]} 
+        <?php if($i%2==0){ echo "<div class='row'>\n"; } ?>
+        <div class="card col-sm ml-3 mb-3">
+            <?php $vbg=empty($t_vbg)?'bg-light':$t_vbg; $vtxt=empty($t_vtxt)?'text-secondary':$t_vtxt;?>
+            {if empty($this->key)}
+            <div class="card-header bg-transparent">
+              <a class="float-right" href="{surl("wall-$t_part")}">More</a>
+              {=$_cbase['part']['tab'][$t_part]}
+            </div>
+            {else}
+            <div class="mb-3"></div>
+            {/if}
+            <div class="card-body {=$vtxt} {=$vbg}">
+              <!--h5 class="card-title">Success card title</h5-->
+              <p class="card-text">{=$t_title}</p>
+            </div>
+            <div class="card-footer bg-transparent" id='{=$t_cid}'>
+              <i class="add1" msg="+1/错误！" style="display:none;"></i>
+              <span class="float-right badge badge-light fa fa-thumbs-o-up"> {=$t_diggtop}</span>
+              {stime($t_atime)}
+            </div>
+        </div>
+        <?php if($i%2==1){ echo "</div>\n"; if($i==1){ echo "\n$adbar\n"; } } $i++; ?>
+    {/tag:wlists}
+    <?php if($i%2!=0){ echo "</div>"; } ?>
+
+    <div class="clearfix"></div>
+    {php echo $_cbase['page']['bar']; }
+    <script>bs4pager();</script>
+    <div class="clearfix">&nbsp;</div>
+
+  </div>
+
+  {inc:"wall/_side"}
+
+</div>
+
+
+{inc:"home/_foot"}
+<script>digg()</script>
+</body></html>
+
