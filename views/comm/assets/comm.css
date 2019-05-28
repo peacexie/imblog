@@ -87,7 +87,20 @@ i,b { font-weight:normal; font-style:normal; }
 }
 
 
-.news_text, td.news_text, td.news_text p, div.news_text, div.news_text p { font-size:1rem; line-height:180%; padding:10px; }
+.news_text, td.news_text, td.news_text p, div.news_text, div.news_text p { font-size:1rem; line-height:180%; }
+/* 还原默认的样式-start */
+.news_text ul { display:block; margin:1em 0; padding:0 0 0 2.5em; }
+.news_text li { list-style-type:disc; }
+.news_text ul ul, .news_text ol ul { margin-top:0; margin-bottom:0; }
+.news_text ul ul li, .news_text ol ul li { list-style-type:circle; }
+.news_text ol ol ul li, .news_text ol ul ul li, .news_text ul ol ul li, .news_text ul ul ul li { list-style-type:square; }
+.news_text p { display:block; margin:1em 0; }
+.news_text blockquote { display:block; margin:1em 0; padding:0 2.5em; }
+.news_text strong, .news_text b { font-weight:bold; }
+.news_text i, .news_text em { font-style:italic; }
+.news_text u { text-decoration:underline; }
+.news_text s, .news_text del { text-decoration:line-through; }
+/* 还原默认的样式-end */
 h1.news_title { text-align: center; font-size: 18px; margin: 0px 0px 10px 0px; }
 .news_bar { font-size:0.9rem; text-align:center; background:#DDD; padding:5px; margin:5px 0; }
 .news_rem .rembar { text-align:left; background: #DDD; padding: 8px; margin: 10px 0px; }
@@ -96,7 +109,6 @@ h1.news_title { text-align: center; font-size: 18px; margin: 0px 0px 10px 0px; }
 .news_rem dt { border-bottom:1px dashed #CCF; padding:0px 0px 10px 0px; margin:0px 0px 10px 0px; }
 .news_rem dt span{ font-size:14px; font-weight:bold; color:444; }
 .news_rem dl { display:block; border:1px solid #CCC; padding:10px; margin:10px 0px; }
-
 
 .about-tbar { background:#EEE; padding:5px 10px; margin:5px 0px 20px 0px; border:1px solid #DDD; }
 .about-tbar i { font-style: normal; }
@@ -107,7 +119,10 @@ h1.news_title { text-align: center; font-size: 18px; margin: 0px 0px 10px 0px; }
 .pg_bar{ box-sizing:content-box; margin-top:1.0rem; text-align:center; }
 .pg_bar .pagination li a{ margin:0 1px; }
 .pg_bar .pagination li input{ width:60px; }
-@media only screen and (max-width:480px){ .pg_bar .pagination li input{ display:none; } }
+@media only screen and (max-width:480px){ 
+    .pg_bar .pagination li input{ display:none; } 
+    .news_text img{ width:100%; }
+}
 .sidetop{ clear:both; margin-top:1rem; }
 @media only screen and (min-width:992px){ .sidetop{ display:none; } }
 
