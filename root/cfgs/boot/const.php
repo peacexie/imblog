@@ -55,31 +55,15 @@ $_cbase['ucfg']['ctab'] = 'F00,F0F,060,00F,F60,90F,F69,06F,099,606,60F,906,F6F';
 
 /// 额外配置-根据需要配置 -----------------------------------------------
 
-// weixin
-$_cbase['weixin']['debug']  = true; 
-$_cbase['weixin']['actiks']  = array(); 
-$_cbase['weixin']['haibaoMediaid'] = 'I7mPnzk9v0tF6nHiEmy0sDbtRksBp4pVHSYBZvdROjc';
-$_cbase['weixin']['haibaoPicurl'] = 'http://yscode.txjia.com/uimgs/assets/logo/haibao.jpg';
-$_cbase['weixin']['tplidIndoc'] = 'u6DK6CKG8TnCFGaOwglBPUPa_UvE3nwpQU-k8kP1YpA';
-
-// indoc
-$_cbase['indoc']['debug'] = true; 
-// topic
-$_cbase['topic']['tpldir'] = '/comm/topic'; 
-
-// 3aks
-$_cbase['3aks']['baiduip'] = '3GGtGlCtbAGa1GYK70XFX2Rb'; //百度IP
-$_cbase['3aks']['googlemap'] = 'AIzaSyCz-pQkTS-XnB2l3kc9JeT-NICKxO8dc-g'; //google地图
-$_cbase['3aks']['baidumap'] = 'MgtgVl65h2kjZUdXi8QX71dW'; //百度地图
-
 // 多语言/多城市:实现
-$_cbase['part']['name'] = '语言'; // 名称:语言/城市
+$_cbase['part']['name'] = '便笺墙'; // 名称:语言/城市/Memo-Wall
 $_cbase['part']['tab'] = array(
-    'cn' => '中文版', // 'cz' => '郴州',
-    'en' => 'English', // 'dg' => '东莞',
+    'mood' => '心情墙', // 'cn' => '中文版', // 'cz' => '郴州',
+    'wish' => '许愿墙', // 'en' => 'English', // 'dg' => '东莞',
+    'word' => '和平鸽小语', 
 );
-$_cbase['part']['def'] = 'cn'; // 默认:语言-cn/城市-cz
-$_cbase['part']['mods'] = array('xxx'); // 'about','news','cargo','gbook'
-$_cbase['part']['psyn'] = array('xxx'); // 'about','cargo', // 资料同步模型
+$_cbase['part']['def'] = 'mood'; // 默认:语言-cn/城市-cz
+$_cbase['part']['mods'] = array('wall',); // 'about','cargo','gbook'
+$_cbase['part']['psyn'] = array('xxx'); // 'about','cargo', 资料同步模型
 // 请在相关模型主表的`xno`字段后,手动添加`part`字段
 // 设置了psyn的模型，再添加psyn字段，用于同步
