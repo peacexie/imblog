@@ -2,7 +2,7 @@
 
 --- --- --- --- --- --- --- --- --- 
 
-* 贴心博客(imblog) V4.9 Released(Beta) (2019-08)
+* 贴心博客(imblog) V4.9 Released (2019-08)
 * Demo Website / 官网演示: http://imblog.txjia.com/
 * Download / 下载: https://github.com/peacexie/imblog
 
