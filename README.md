@@ -2,19 +2,19 @@
 
 --- --- --- --- --- --- --- --- --- 
 
-* 贴心博客(imblog) V4.9 Released (2019-08)
+* 贴心博客(imblog) V5.0 Released (2019-10)
 * Demo Website / 官网演示: http://imblog.txjia.com/
 * Download / 下载: https://github.com/peacexie/imblog
 
 --- --- --- --- --- --- --- --- --- 
 
-### ChangeLog/更新项目 2019-08
+### ChangeLog/更新项目 2019-10
 
 * ChangeLog
-  - http://imcat.txjia.com/doc.php?uplog-4_0
+  - http://imcat.txjia.com/doc.php?uplog-5_0
 
 * 更新日志
-  - http://imcat.txjia.com/dev.php?uplog-4_0
+  - http://imcat.txjia.com/dev.php?uplog-5_0
 
 --- --- --- --- --- --- --- --- --- 
 
