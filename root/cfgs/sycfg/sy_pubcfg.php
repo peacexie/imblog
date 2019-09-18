@@ -56,7 +56,7 @@ $_sy_pubcfg['cdemo'] =  array(
 $_sy_pubcfg['rndata'] =  array(
     //'tab' => array("kid IN ('admin','peace')",'token,appid,appsecret'),
     'base_paras' => array("model='prsafe'",'val'),
-    //'wex_apps' => array("1=1",'token,appsecret'),
+    'wex_apps' => array("1=1",'token,appsecret'),
     'bext_paras:1' => array("kid='push_token'",'detail'),
     'bext_paras:2' => array("kid='push_site'",'detail',array('detail'=>'www.your_domain.com')),
 );
@@ -64,9 +64,9 @@ $_sy_pubcfg['rndata'] =  array(
 //7. skip-dirs
 $_sy_pubcfg['skip'] =  array(
     'main' => array(), // 'fitpl','yscode'
-    'vendor' => array('aliOss'), // 'composer','Monolog','psrlog','silex',
+    'vendor' => array('phpmailer', 'qcloudsms'), // 'composer','Monolog','psrlog','silex',
     'dtmp' => array('@test','@udoc','debug','update','weixin','remote'),
-    'vendui' => array('artEditor','swplayer','photoSwipe','ftree','proxy'), //
+    'vendui' => array('artEditor','swplayer','photoSwipe','proxy'), //
 );
 //8. skip-files
 $_sy_pubcfg['skfiles'] =  array(
@@ -109,9 +109,6 @@ $_sy_pubcfg['skfiles'] =  array(
     'efmO.ttf',
 
     //ext-*
-    'extMedoo.php',
-    'Medoo.cls_php',
-    'Pimple.cls_php',
     'exvFtree.php',
 
     // mini-imps
@@ -120,15 +117,12 @@ $_sy_pubcfg['skfiles'] =  array(
     'spword.imp_txt',
     //'adminer.imp_php',
     //'derun.imp_php',
-    'exvOcar.php',
-    'exvFtree.php',
-    'exvOpay.php',
 
     //'jq/bs
     'jquery-3.x.js',
-    //'bs4.min.css',
-    //'bs4.min.js',
-    'spword.imp_txt',
+    'bs4.min.css',
+    'bs4.min.js',
+    //'spword.imp_txt',
     
     'jquery-fileupload.js',
 
