@@ -7,6 +7,8 @@ use imcat\extMkdown;
 use imcat\exvFtree;
 use imcat\safComm;
 use imcat\usrPerm;
+use imcat\vopComp;
+use imcat\vopUrl;
 
 class ftreeCtrl{
 
@@ -25,9 +27,10 @@ class ftreeCtrl{
     public $sid = '';
     public $sess = '';
 
-    function __construct($ucfg=array(), $vars=array()){ 
+    function __construct($ucfg=array(), $vars=array()){
         $this->ucfg = $ucfg;
         $this->vars = $vars;
+        vopUrl::jumpr();
         $tmp = array('mod','key','view');
         foreach ($tmp as $k0) {
             $$k0 = empty($this->ucfg[$k0]) ? '' : $this->ucfg[$k0];
@@ -39,7 +42,7 @@ class ftreeCtrl{
         $f1 = in_array($key, $acts); 
         $f2 = empty($this->sess) || !empty($_SESSION['ftuser_myids']);
         if($f2 && $f1){ // 没有权限
-            header("Location:?ftree-login-to01");
+            header("Location:./ftree-login-to01");
         }
         if(!empty($this->sess) && !empty($_SESSION['ftnow_part']) && !empty($_SESSION['ftnow_extab'])){ // 有效登陆
             $this->part = $_SESSION['ftnow_part'];
@@ -98,7 +101,7 @@ class ftreeCtrl{
                                 $ids = $row['kid'].','.$row['did'].','.$row['mid'].','.$row['mates'];
                                 $ida = array_filter(explode(',',$ids));
                                 $_SESSION['ftuser_myids'] = implode(',',$ids);
-                                header("Location:?ftree.".$tmp[1]);
+                                header("Location:./ftree.".$tmp[1]);
                                 die();
                             }else{
                                 $remsg = "登录信息错误(4)[{$fm['name']}]!";
@@ -111,7 +114,7 @@ class ftreeCtrl{
                         $this->sess = $_SESSION[$this->sid] = $fm['name'];
                         $_SESSION['ftuser_parts'] = $row['parts'];
                         if($row['parts'] && !strpos($row['parts'],',')){
-                            header("Location:?ftree-go-".$row['parts']);
+                            header("Location:./ftree-go-".$row['parts']);
                             die();
                         } // 如果只有一个parts,go ??? 
                     }else{
@@ -122,7 +125,7 @@ class ftreeCtrl{
                 $remsg = '请输入登录信息!';
             }
         }elseif(!empty($this->sess)){
-            $remsg = "`{$this->sess}`已登录，请选择数据区或`<a href='?ftree-login-out'>登出</a>`!";
+            $remsg = "`{$this->sess}`已登录，请选择数据区或`<a href='./ftree-login-out'>登出</a>`!";
         }
         $re['vars']['remsg'] = $remsg;
         $re['vars']['part'] = db()->table('ftree_part')->select();
@@ -136,7 +139,7 @@ class ftreeCtrl{
         }
         if($view){
             if(empty($this->sess)){ // 登录切换
-                header("Location:?ftree-login-to02");
+                header("Location:./ftree-login-to02");
                 die();
             } 
             $rp = db()->table('ftree_part')->where("part='$view'")->find();
@@ -145,14 +148,14 @@ class ftreeCtrl{
             if($rp && in_array($view,$taba)){ // 验证:存在+有权限
                 $_SESSION['ftnow_part'] = $view;
                 $_SESSION['ftnow_extab'] = empty($rp['extab']) ? 'main' : $rp['extab'];
-                header("Location:?ftree-list");
+                header("Location:./ftree-list");
                 die();
             }else{
-                header("Location:?ftree-login-to03");
+                header("Location:./ftree-login-to03");
                 die();
             }
         }else{
-            header("Location:?ftree-login");
+            header("Location:./ftree-login");
             die();
         }
 
@@ -170,7 +173,7 @@ class ftreeCtrl{
         $fm = basReq::arr('fm');
         $reid = exvFtree::rowActs($fm,$kid,$act);
         $urlp = is_numeric($reid) ? "&eid=$reid" : '';
-        header("Location:?ftree-list&kw=$kid$urlp");
+        header("Location:./ftree-list&kw=$kid$urlp");
         die();
     }
 
@@ -183,18 +186,18 @@ class ftreeCtrl{
             if($this->ucfg['view']){
                 $row = exvFtree::dbNow($this->ucfg['view']);
                 if(!$row){
-                    header("Location:?ftree");
+                    header("Location:./ftree");
                     die();
                 }
                 /*if(!empty($row['part']) && $_SESSION['ftnow_part']!=$row['part']){
-                    #header("Location:?ftree-login-to0x");
+                    #header("Location:./ftree-login-to0x");
                 }*/
             }elseif(empty($_SESSION['ftuser_parts'])){
                 $row['kid'] = '(0)';
                 $row['name'] = '(增加)';
                 $row['sex'] = '女';
             }else{
-                header("Location:?ftree-login-to03");
+                header("Location:./ftree-login-to03");
                 die();
             }
         }else{
@@ -237,7 +240,7 @@ class ftreeCtrl{
     }
     static function vhref($kid){
         $ids = empty($_SESSION['ftuser_myids']) ? [] : explode(',',$_SESSION['ftuser_myids']);
-        $href = "href='?ftree.{$kid}'";
+        $href = "href='./ftree.{$kid}'";
         if(empty($ids)){
             return $href;
         }else{
@@ -293,22 +296,22 @@ class ftreeCtrl{
     }
 
     function homeAct(){
-        $re = $this->mdhtml('read');
+        $re['newtpl'] = 'ftree/mhome'; // 模板
         return $re;
     }
     function fuwuAct(){
-        $re = $this->mdhtml('fuwu');
+        $re['newtpl'] = 'ftree/mhome'; // 模板
         $re['vars']['extitle'] = '服务';
         return $re;
     }
 
-    function mdhtml($fp){
+    /*function mdhtml($fp){
         $fp = DIR_VIEWS."/comm/ftree/$fp.md";
-        $data = comFiles::get($fp,1);
+        $data = comFiles::get($fp,1); # vopComp::incBlock('{inc:"ftree/$fp"}'); #
         $re['vars']['html'] = extMkdown::pdext($data,0);
         $re['newtpl'] = 'ftree/mhome'; // 模板
         return $re;
-    }
+    }*/
 
 }
 
