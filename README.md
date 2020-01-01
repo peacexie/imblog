@@ -2,13 +2,13 @@
 
 --- --- --- --- --- --- --- --- --- 
 
-* 贴心博客(imblog) V5.0 Released (2019-10)
+* 贴心博客(imblog) V5.1 Released (2019-12)
 * Demo Website / 官网演示: http://imblog.txjia.com/
 * Download / 下载: https://github.com/peacexie/imblog
 
 --- --- --- --- --- --- --- --- --- 
 
-### ChangeLog/更新项目 2019-10
+### ChangeLog/更新项目 2019-12
 
 * ChangeLog
   - http://imcat.txjia.com/doc.php?uplog-5_0
@@ -33,7 +33,7 @@
 ### 【Setup】
 
 * Need Environmental
-  - PHP5.4 ~ PHP7.3 (Recommend: PHP5.6 ~ PHP7.3)
+  - PHP5.4 ~ PHP7.4 (Recommend: PHP5.6 ~ PHP7.3)
   - mysql5.1+
   - Extended libs: MySQLi/MySQL, GD2
 
@@ -69,7 +69,7 @@
 ### 【安装提示】
 
 * 环境需求
-  - PHP5.4 ~ PHP7.3 (推荐: PHP5.6 ~ PHP7.3)
+  - PHP5.4 ~ PHP7.4 (推荐: PHP5.6 ~ PHP7.3)
   - mysql5.1+
   - 扩展: MySQLi/MySQL, GD2
 
