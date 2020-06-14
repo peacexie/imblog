@@ -57,6 +57,8 @@ $_cbase['ucfg']['stats'] = ''; // 开启统计模块:comm,dev,doc,sapi; 自v5.0+
 
 /// 额外配置-根据需要配置 -----------------------------------------------
 
+$_cbase['3aks']['baidumap'] = 'MgtgVl65h2kjZUdXi8QX71dW'; //百度地图
+
 // 多语言/多城市:实现
 $_cbase['part']['name'] = '便笺墙'; // 名称:语言/城市/Memo-Wall
 $_cbase['part']['tab'] = array(
