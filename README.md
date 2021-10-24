@@ -1,20 +1,14 @@
 
+感恩 github.com 相伴多年！
+
+中国用户请尽量移步：https://gitee.com/PeaceXie/imblog ，
+因为国内访问实在是有点慢！(2021-10)
 
 --- --- --- --- --- --- --- --- --- 
 
-* 贴心博客(imblog) V5.1 Released (2019-12)
+* 贴心博客(imblog) V5.7 Released (2021-10)
 * Demo Website / 官网演示: http://imblog.txjia.com/
-* Download / 下载: https://github.com/peacexie/imblog
-
---- --- --- --- --- --- --- --- --- 
-
-### ChangeLog/更新项目 2019-12
-
-* ChangeLog
-  - http://imcat.txjia.com/doc.php?uplog-5_0
-
-* 更新日志
-  - http://imcat.txjia.com/dev.php?uplog-5_0
+* Download / 下载: https://gitee.com/PeaceXie/imblog
 
 --- --- --- --- --- --- --- --- --- 
 
