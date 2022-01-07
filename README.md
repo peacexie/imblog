@@ -1,4 +1,6 @@
 
+This project is moved to : https://gitee.com/peacexie/imblog.
+
 感恩 github.com 相伴多年！
 
 中国用户请尽量移步：https://gitee.com/PeaceXie/imblog ，
